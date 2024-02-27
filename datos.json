@@ -1,0 +1,8 @@
+{
+  "cadena": "Ale",
+  "numero": 32,
+  "boolean": true,
+  "arreglo": ["bicicletear", "boxear", "estudiar"],
+  "objeto": { "instagram": "instagram", "facebook": "facebook" },
+  "nulo": null
+}
