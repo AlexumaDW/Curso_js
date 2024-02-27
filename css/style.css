@@ -1,0 +1,23 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+:root {
+  --dark-color: rgb(64, 63, 63);
+  --yellow-color: rgb(255, 255, 54);
+}
+
+.link-dom {
+  font-size: 2rem;
+  background-color: aqua;
+  color: blue;
+  background-color: rgb(165, 42, 42);
+}

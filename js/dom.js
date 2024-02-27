@@ -50,3 +50,28 @@ console.log($linkDOM.dataset.rel);
 console.clear();
 
 /**************************DOM - Estilos y Variables**************************/
+
+const $linkDOMCss = document.styleSheets[1].cssRules[3].style;
+const cssObj = getComputedStyle($linkDOM, null);
+console.log($linkDOM.getComputedStyle);
+console.log($linkDOMCss);
+$linkDOM.style.setProperty("text-decoration", "none");
+$linkDOM.style.setProperty("display", "block");
+$linkDOM.style.width = "50%";
+$linkDOM.style.textAlign = "center";
+$linkDOM.style.padding = "1rem";
+$linkDOM.style.marginRight = "auto";
+$linkDOM.style.marginLeft = "auto";
+
+//custom property
+
+$linkDOMCss.setProperty("background-color", "rgb(165, 42, 42)");
+$body = document.body;
+const $link_root = document.styleSheets[1].cssRules[2].style;
+let varDarkColor =
+    getComputedStyle($link_root).getPropertyValue("--dark-color"),
+  varYellowColor =
+    getComputedStyle($link_root).getPropertyValue("--yellow-color");
+console.log($link_root);
+console.log(varDarkColor);
+console.log(varYellowColor);
