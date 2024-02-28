@@ -21,3 +21,35 @@ html {
   color: blue;
   background-color: rgb(165, 42, 42);
 }
+
+.card {
+  display: inline-block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: var(--dark-color);
+  color: var(--yellow-color);
+  padding: 2rem;
+  border: 3px solid black;
+  border-radius: 2rem;
+}
+
+.card figcaption {
+  text-align: center;
+  padding: 1rem;
+}
+
+.rotate45 {
+  transform: rotate(45deg);
+}
+
+.rotate-45 {
+  transform: rotate(-45deg);
+}
+
+.opacity-80 {
+  opacity: 0.8;
+}
+
+.sepia {
+  filter: sepia(1);
+}

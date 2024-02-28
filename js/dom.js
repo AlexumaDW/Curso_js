@@ -67,11 +67,14 @@ $linkDOM.style.marginLeft = "auto";
 
 $linkDOMCss.setProperty("background-color", "rgb(165, 42, 42)");
 $body = document.body;
-const $link_root = document.styleSheets[1].cssRules[2].style;
-let varDarkColor =
-    getComputedStyle($link_root).getPropertyValue("--dark-color"),
-  varYellowColor =
-    getComputedStyle($link_root).getPropertyValue("--yellow-color");
-console.log($link_root);
+const $linkRoot = document.styleSheets[1];
+const $DOM = document.documentElement;
+
+console.log($linkRoot);
+let varDarkColor = getComputedStyle($DOM).getPropertyValue("--dark-color"),
+  varYellowColor = getComputedStyle($DOM).getPropertyValue("--yellow-color");
 console.log(varDarkColor);
 console.log(varYellowColor);
+
+$body.style.backgroundColor = varDarkColor;
+console.clear();
