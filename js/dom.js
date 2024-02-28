@@ -78,3 +78,15 @@ console.log(varYellowColor);
 
 $body.style.backgroundColor = varDarkColor;
 console.clear();
+/*************************************Clases css*************************************/
+
+const $card = document.querySelector(".card");
+console.log($card);
+
+console.log($card.classList);
+$card.classList.add("rotate45");
+console.log($card.classList);
+$card.classList.remove("rotate45");
+
+console.clear();
+/*************************************Clases css*************************************/
