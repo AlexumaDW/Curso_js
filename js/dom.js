@@ -89,4 +89,21 @@ console.log($card.classList);
 $card.classList.remove("rotate45");
 
 console.clear();
-/*************************************Clases css*************************************/
+/*************************************tecto y HTML*************************************/
+
+const $WhatIsDOM = document.getElementById("que-es");
+
+let text = `
+<p>
+El modelo de Objetos del Documento (<b><i>DOM - Document Object Model</i></b>) es una API para documentos HTML y XML.
+</p>
+<p>
+Este provee una representacion estructural del documento, permitiendo modificar su contenido y presentacion visual mediante JS.
+</p>
+<p>
+<mark>El DOM no es parte de la especificacion de JavaScript, es una API para los navegadores</mark>
+</p>
+`;
+
+$WhatIsDOM.textContent = text;
+$WhatIsDOM.innerHTML = text;
