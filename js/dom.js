@@ -107,3 +107,15 @@ Este provee una representacion estructural del documento, permitiendo modificar 
 
 $WhatIsDOM.textContent = text;
 $WhatIsDOM.innerHTML = text;
+console.clear();
+
+/*******************************Recorriendo el DOM*******************************/
+
+const $cards = document.querySelector(".cards");
+
+console.log($cards);
+console.log($cards.children);
+console.log($cards.children[0]);
+console.log($cards.parentElement);
+console.log($cards.firstElementChild);
+console.log($cards.lastElementChild);
