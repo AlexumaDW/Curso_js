@@ -125,7 +125,7 @@ console.clear();
 
 /****************************Creando Elementos y Fragmentos***************************/
 
-const $figure = document.createElement("figure"),
+/*const $figure = document.createElement("figure"),
   $img = document.createElement("img"),
   $figcaption = document.createElement("figcaption"),
   $figcaptionText = document.createTextNode("Blanco"),
@@ -189,7 +189,57 @@ meses.forEach((el) => {
 });
 
 $ul3.appendChild($fragment);
-document.getElementById("meses").appendChild($ul3);
+document.getElementById("meses").appendChild($ul3);*/
 console.clear();
 
 /****************************Templates***************************/
+
+const $cards = document.querySelector(".cards"),
+  $template = document.getElementById("template-card").content,
+  $fragment = document.createDocumentFragment(),
+  cardContent = [
+    {
+      title: "template",
+      img: "https://place-hold.it/300",
+    },
+    {
+      title: "template",
+      img: "https://place-hold.it/300",
+    },
+    {
+      title: "template",
+      img: "https://place-hold.it/300",
+    },
+    {
+      title: "template",
+      img: "https://place-hold.it/300",
+    },
+    {
+      title: "template",
+      img: "https://place-hold.it/300",
+    },
+    {
+      title: "template",
+      img: "https://place-hold.it/300",
+    },
+    {
+      title: "template",
+      img: "https://place-hold.it/300",
+    },
+    {
+      title: "template",
+      img: "https://place-hold.it/300",
+    },
+  ];
+
+cardContent.forEach((el) => {
+  $template.querySelector(".card").setAttribute("src", el.img);
+  $template.querySelector(".card").setAttribute("alt", el.title);
+  $template.querySelector("figcaption").textContent = el.title;
+
+  let $clone = document.importNode($template, true);
+
+  $fragment.appendChild($clone);
+});
+
+$cards.appendChild($fragment);
