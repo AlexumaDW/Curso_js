@@ -121,7 +121,6 @@ console.log($cards.children[0]);
 console.log($cards.parentElement);
 console.log($cards.firstElementChild);
 console.log($cards.lastElementChild);*/
-console.clear();
 
 /****************************Creando Elementos y Fragmentos***************************/
 
@@ -190,11 +189,10 @@ meses.forEach((el) => {
 
 $ul3.appendChild($fragment);
 document.getElementById("meses").appendChild($ul3);*/
-console.clear();
 
 /****************************Templates***************************/
 
-const $cards = document.querySelector(".cards"),
+/*const $cards = document.querySelector(".cards"),
   $template = document.getElementById("template-card").content,
   $fragment = document.createDocumentFragment(),
   cardContent = [
@@ -242,4 +240,24 @@ cardContent.forEach((el) => {
   $fragment.appendChild($clone);
 });
 
-$cards.appendChild($fragment);
+$cards.appendChild($fragment);*/
+
+/**************************** Modificando Elementos (Old Style)***************************/
+
+const $cards = document.querySelector(".cards"),
+  $newCard = document.createElement("figure"),
+  $cloneCards = $cards.cloneNode(true),
+  $colgate = document.getElementById("colgate");
+
+$newCard.innerHTML = `        
+<img src="https://place-hold.it/300" alt="Remplazadora">
+<figcaption>Remplazo</figcaption>
+</img>`;
+
+$newCard.classList.add("card");
+
+//$cards.replaceChild($newCard, $cards.children[2]);
+//$cards.insertBefore($newCard, $cards.firstElementChild);
+//$cards.removeChild($cards.children[4]);
+
+$colgate.appendChild($cloneCards);
