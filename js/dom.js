@@ -79,7 +79,7 @@ console.log(varYellowColor);
 $body.style.backgroundColor = varDarkColor;*/
 console.clear();
 /*************************************Clases css*************************************/
-
+/*
 const $card = document.querySelector(".card");
 console.log($card);
 
@@ -88,10 +88,10 @@ $card.classList.add("rotate45");
 console.log($card.classList);
 $card.classList.remove("rotate45");
 
-console.clear();
+console.clear();*/
 /*************************************tecto y HTML*************************************/
 
-const $WhatIsDOM = document.getElementById("que-es");
+/*const $WhatIsDOM = document.getElementById("que-es");
 
 let text = `
 <p>
@@ -107,7 +107,7 @@ Este provee una representacion estructural del documento, permitiendo modificar 
 
 $WhatIsDOM.textContent = text;
 $WhatIsDOM.innerHTML = text;
-console.clear();
+console.clear();*/
 
 /*******************************Recorriendo el DOM*******************************/
 
@@ -243,7 +243,7 @@ cardContent.forEach((el) => {
 $cards.appendChild($fragment);*/
 
 /**************************** Modificando Elementos (Old Style)***************************/
-
+/*
 const $cards = document.querySelector(".cards"),
   $newCard = document.createElement("figure"),
   $cloneCards = $cards.cloneNode(true),
@@ -255,9 +255,63 @@ $newCard.innerHTML = `
 </img>`;
 
 $newCard.classList.add("card");
+*/
 
 //$cards.replaceChild($newCard, $cards.children[2]);
 //$cards.insertBefore($newCard, $cards.firstElementChild);
 //$cards.removeChild($cards.children[4]);
 
-$colgate.appendChild($cloneCards);
+//$colgate.appendChild($cloneCards);
+
+/**************************** Modificando Elementos (Cool Style)***************************/
+
+/*
+.insertAdjacent...
+.insertAdjacentElement(position, el)
+.insertAdjacentHTML(position, html)
+.insertAdjacentText(position, text)
+
+Posiciones:
+beforebegin(hermano anterior)
+afterend(hermano siguiente)
+afterbegin(primer hijo)
+beforebegin(ultimo hijo)
+*/
+let $text = `        
+<img src="https://place-hold.it/300" alt="Remplazadora">
+<figcaption>Remplazo</figcaption>
+</img>`;
+
+const $newCard = document.createElement("figure"),
+  $cards = document.querySelector(".cards"),
+  $template = document.getElementById("template-card").contein,
+  $fragment = document.createDocumentFragment(),
+  cardContent = [
+    {
+      title: "template",
+      img: "https://place-hold.it/300",
+    },
+    {
+      title: "template",
+      img: "https://place-hold.it/300",
+    },
+  ];
+
+cardContent.forEach((el) => {
+  $template.querySelector("img").setAttribute("src", el.img);
+  $template.querySelector("img").setAttribute("alt", el.title);
+  $template.querySelector("figcaption").textContent = el.title;
+
+  let $clone = document.importNode($template, true);
+});
+$newCard.classList.add(".card");
+console.log($cards);
+console.log($newCard);
+console.log($templateCard);
+
+$cards.insertAdjacentElement("afterend", $newCard);
+/*
+$cards.prepend($newCard);
+$cards.append($newCard);
+$cards.before($newCard);
+$cards.after($newCard);*/
