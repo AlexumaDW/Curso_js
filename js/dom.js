@@ -230,7 +230,7 @@ document.getElementById("meses").appendChild($ul3);*/
     },
   ];
 
-cardContent.forEach((el) => {
+cardContent.forEach((el) => { 
   $template.querySelector(".card").setAttribute("src", el.img);
   $template.querySelector(".card").setAttribute("alt", el.title);
   $template.querySelector("figcaption").textContent = el.title;
@@ -281,10 +281,9 @@ let $text = `
 <img src="https://place-hold.it/300" alt="Remplazadora">
 <figcaption>Remplazo</figcaption>
 </img>`;
-
 const $newCard = document.createElement("figure"),
   $cards = document.querySelector(".cards"),
-  $template = document.getElementById("template-card").contein,
+  $template = document.getElementById("template-card").content,
   $fragment = document.createDocumentFragment(),
   cardContent = [
     {
@@ -298,18 +297,21 @@ const $newCard = document.createElement("figure"),
   ];
 
 cardContent.forEach((el) => {
-  $template.querySelector("img").setAttribute("src", el.img);
-  $template.querySelector("img").setAttribute("alt", el.title);
+  $template.querySelector(".card").setAttribute("src", el.img);
+  $template.querySelector(".card").setAttribute("alt", el.title);
   $template.querySelector("figcaption").textContent = el.title;
 
   let $clone = document.importNode($template, true);
-});
-$newCard.classList.add(".card");
-console.log($cards);
-console.log($newCard);
-console.log($templateCard);
 
-$cards.insertAdjacentElement("afterend", $newCard);
+  $fragment.appendChild($clone);
+});
+
+//$cards.appendChild($fragment);
+//$cards.insertAdjacentElement("afterend", $fragment);
+
+$cards.prepend($fragment);
+$cards.prepend($fragment);
+
 /*
 $cards.prepend($newCard);
 $cards.append($newCard);
